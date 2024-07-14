@@ -19,15 +19,5 @@
       "run_at": "document_start"
     }
   ],
-  "web_accessible_resources": [
-    {
-      "matches": [
-        "<all_urls>"
-      ],
-      "resources": [
-        "assets/*"
-      ]
-    }
-  ],
   "manifest_version": 3
 }
