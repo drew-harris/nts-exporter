@@ -1,7 +1,6 @@
 function App() {
-  return <div className="bg-red-500 p-8">Hello World!</div>;
+  return <div className="p-8 bg-red-500">hello world!</div>;
 }
 
-alert("test");
-
 export default App;
+

@@ -2,19 +2,19 @@
   "name": "crx-react",
   "description": "A Chrome extension demo.",
   "version": "1.0.0",
-  "action": {
-    "default_popup": "../popup.html"
-  },
   "background": {
     "service_worker": "background.ts"
   },
+  "permissions": [
+    "identity"
+  ],
   "content_scripts": [
     {
       "matches": [
         "https://www.nts.live/*"
       ],
       "js": [
-        "content-scripts/content.tsx"
+        "content.tsx"
       ],
       "run_at": "document_start"
     }
