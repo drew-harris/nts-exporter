@@ -2,9 +2,6 @@
   "name": "crx-react",
   "description": "A Chrome extension demo.",
   "version": "1.0.0",
-  "background": {
-    "service_worker": "background.ts"
-  },
   "permissions": [
     "identity"
   ],

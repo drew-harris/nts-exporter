@@ -5,11 +5,9 @@ import App from "./App";
 
 window.onload = async () => {
   // Setup the spotify sdk
-  // const redirect_uri = await getRedirectUri();
-  const redirect_uri = "https://www.nts.live/redirect";
   const sdk = SpotifyApi.withUserAuthorization(
     "fd8e4fd87a464ee28f2e5fdf5700880d",
-    redirect_uri,
+    "https://www.nts.live/redirect",
     [
       "user-modify-playback-state",
       "playlist-modify-private",
@@ -19,12 +17,16 @@ window.onload = async () => {
     ],
   );
 
-  const response = await sdk.currentUser.albums.savedAlbums(20);
-  console.table(response.items.at(0));
+  // const response = await sdk.currentUser.albums.savedAlbums(20);
+  // console.log(response.items.at(0)?.album.name);
 
-  const el = document.querySelector("body");
+  const el = document.querySelector(".bio__footer");
+  console.log("element", el);
   if (el) {
     el.insertAdjacentHTML("afterend", '<div id="crx-app"></div>');
-    ReactDOM.render(<App />, document.getElementById("crx-app") as HTMLElement);
+    ReactDOM.render(
+      <App spotify={sdk} />,
+      document.getElementById("crx-app") as HTMLElement,
+    );
   }
 };
